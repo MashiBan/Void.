@@ -7,18 +7,25 @@
     <link rel="stylesheet" href="./messages.css">
 </head>
 <body>
+    <audio id="backgroundMusic"  autoplay loop>
+        <source src="song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <canvas class="webgl" style="z-index: -1;"></canvas>
     <section style="display: flex; flex-direction: column;z-index: 2; height: 8rem;padding-top: 9rem; padding-left: 3rem;width: 50vw;font-size: 1rem; color: aliceblue; font-family: monospace;">
         <h1>You are not alone! The feeling you are having right now is absolutely fine..We are here to help you</h1>
+        
         <p style="padding: 1rem; padding-top: 13rem;">how are you feeling?</p>
         <!-- <form>
             <textarea id="mInput"></textarea>
             <button onclick="storeMe()"> Submit</button>
         </form> -->
-        <div style="padding-left: 1rem;">
-        <button style="padding: 0.11rem; width: max-content; background-color: black; border: solid white; color: aliceblue;" >Not good</button>
-        <button style="padding: 0.11rem;width: max-content; background-color: black; border: solid white; color: aliceblue;">Sad</button>
-        <button style="padding: 0.11rem;width: max-content; background-color: black; border: solid white; color: aliceblue;">Digust</button>
+        <div style="padding-left: 1rem; padding-top: 2rem; z-index: 2;">
+            <!-- <a href=""  style="text-decoration: none;"><span style="padding: 0.11rem; width: max-content;  border: solid white; padding: 1rem; color: aliceblue;" >fine</span></a> -->
+        <a href="" style="text-decoration: none;"><span style="padding: 0.11rem; width: max-content; border: solid white; padding: 1rem; color: aliceblue;" >not-good</span></a>
+        <a href="" style="text-decoration: none;"><span style="padding: 0.11rem; width: max-content; border: solid white; padding: 1rem; color: aliceblue;" >sad</span></a>
+        <a href="resorces.html"><span style="padding: 0.11rem; width: max-content;  border: solid white; padding: 1rem; color: aliceblue;" >crying</span></a>
+        <a href="" style="text-decoration: none;"><span style="padding: 0.11rem; width: max-content;  border: solid white; padding: 1rem; color: aliceblue;" >disgust</span></a>
     </div>
     </section>
     <section class="skills" id="skills">
@@ -57,6 +64,12 @@
     </section>
 
     <script>
+
+        function playMusic() {
+            var audio = document.getElementById("backgroundMusic");
+            audio.play();
+            document.body.removeEventListener("click", playMusic); // Remove the click event listener after the first click
+        }
         const messages = [
     "I've been feeling overwhelmed lately, like there's so much to do and not enough time to do it all.",
     "Sometimes I wonder if I'm on the right path, if all the effort I'm putting in will pay off in the end.",
@@ -139,6 +152,7 @@
             document.getElementById("random-message").innerText = randomMessage;
           });
         }
+
     </script>
     <script type="module" src="./messages.js"></script>
 

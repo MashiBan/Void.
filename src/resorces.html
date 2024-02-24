@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <link rel="stylesheet" href="./messages.css">
+</head>
+<body onclick="playMusic()">
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <canvas class="webgl" style="z-index: -1;"></canvas>
+
+    <section style="color: aliceblue; z-index: 2; font-family: monospace;">
+        <div>
+            <h1>Resources</h1>
+            <h2>Helpline Numbers</h2>
+            <ul>
+                <li><strong>AASRA</strong>: 91-22-27546669</li>
+                <li><strong>OneLife</strong>: 91-78930 78930</li>
+            </ul>
+
+            <h2>Regional Helpline numbers</h2>
+            <h3>Sucide Helpline in India</h3>
+            <ul>
+                <li><strong>Yourdost</strong></li>
+                <li><strong>7 Cups of Tea</strong></li>
+            </ul>
+
+            <h2>Helpful Contacts</h2>
+            <ul>
+                <li><strong>KGP Support Group</strong>: Hope @ IITKGP</li>
+                <li><strong>KGP LGBTQ+ Support Group</strong>: Ambar</li>
+                <li><strong>Counselling Centre</strong>: Visiting Hours</li>
+                <li><strong>Contact List</strong>: <a href="#">here</a></li>
+            </ul>
+
+            <h2>Nicest Place On The Internet</h2>
+            <p><strong>Reading List</strong></p>
+            <ul>
+                <li><strong>Youtube channel on mental well being, philosophy and psychology</strong>: School of Life</li>
+                <li><strong>TED Talks Playlist on Anxiety/Depression</strong>: <a href="#">here</a></li>
+            </ul>
+        </div>
+    </section>
+    
+    <script type="module" src="./messages.js"></script>
+    <script>
+        function playMusic() {
+            var audio = document.getElementById("backgroundMusic");
+            audio.play();
+            document.body.removeEventListener("click", playMusic); // Remove the click event listener after the first click
+        }
+    </script>
+</body>
+</html>
