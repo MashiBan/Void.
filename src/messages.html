@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <!-- Include jQuery library -->
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <canvas class="webgl" style="z-index: -3;"></canvas>
+    <h1>Test</h1>
+    <!-- Button to trigger the proceeding -->
+    <button class="buttona" onclick="proceed()">Proceed</button>
+    <!-- Container for displaying messages -->
+    <div id="content" style="z-index: 2; color: aliceblue;"></div>
+
+    <script>
+        // Initialize variables
+        var PRESSED = false;
+        var o = 0;
+        // Array of messages
+        var ttt = [
+            "We exist too much in the minds of others, worrying constantly about what others are thinking of us.",
+            "But the truth is that our needlessly tense and preciously brief lives have no meaning other than what we make of them.",
+            "To the infinitely large galaxies and stars, our anxieties, sorrows, joys and tensions are insignificant.",
+            "Come, set free these thoughts overloading your brain. Let them float away in the sky of thoughts.",
+            "A box will pop up now where you can put the heart aches, burdens and anxieties troubling you. Don't worry, nobody will be able to judge, comment or criticize it.",
+            "<textarea class='form-control' placeholder='How are you feeling?'></textarea><br><input type='checkbox' checked> Allow comments<span style='float:right'><span onclick='submit();' class='msgbtn'>Submit</span> | <span onclick='skip(false);' class='msgbtn'>Skip</span></span>"
+        ];
+
+        // Function to proceed to the next message when spacebar is pressed
+        $('body').keyup(function(e) {
+            if (e.keyCode == 32 && PRESSED && o < ttt.length) {
+                // User has pressed space
+                $('#content').fadeOut('slow', function() {
+                    $('#content').html("<div class='messages col-md-6 col-sm-12 col-xs-12' style='color: white; z-index: 2'>" + ttt[o] + "</div>");
+                    $('#content').fadeIn('slow');
+                    o++;
+                });
+            }
+        });
+
+        // Function to handle proceeding
+        function proceed() {
+            PRESSED = true;
+            $(".buttona").fadeOut("slow"); // Hide the button
+            $("#content").fadeOut("slow", function() {
+                $("#content").html("<div class='messages'>Press spacebar or tap to proceed.</div>");
+                $("#content").fadeIn("slow");
+            });
+        }
+    </script>
+    <script type="module" src="./messages.js"></script>
+</body>
+</html>
