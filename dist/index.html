@@ -4,27 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>29 - Raging sea</title>
-    
-  <script type="module" crossorigin src="./assets/index-f0bc55d7.js"></script>
-  <link rel="stylesheet" href="./assets/index-b6861270.css">
+     
+  <script type="module" crossorigin src="./assets/index-93a65f9d.js"></script>
+  <link rel="stylesheet" href="./assets/index-6e930ba5.css">
 </head>
 <body>
     <canvas class="webgl" style="z-index: -1;"></canvas>
-    <section class="hero" style="display: flex;flex-wrap: wrap; z-index: 2;padding: 10%;">
-        <h1 style="padding-left: 5%;color: aliceblue; font-size: 8rem; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 300;">VOID.</h1>
-        <p id="content" style="color: aliceblue; padding:5%;font-size: 1rem; font-family:monospace; position:relative; z-index: 2;">Ever felt like an island in a sea of people? It's easy to get lost in the crowd, to feel unseen and unheard. Social life and FOMO of latest technological advancements can amplify this feeling, with its curated images of perfection masking the raw reality of human existence.
+    <section class="hero" style="display: flex;flex-wrap: wrap; z-index: 2;padding: 15%;position: absolute;">
+        <h1 style="color: aliceblue; padding-bottom: 2rem;font-size: 8rem; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 300;">VOID.</h1>
+        <p id="content" style="padding-top:1rem ;color: aliceblue;font-size:1rem; font-family:monospace; position:relative; z-index: 2;"><span style="line-height: 1.5rem; margin-bottom: 3rem;">Ever felt like an island in a sea of people? It's easy to get lost in the crowd, to feel unseen and unheard. Social life and FOMO of latest technological advancements can amplify this feeling, with its curated images of perfection masking the raw reality of human existence.</span><br>
 
-            At Void, we understand that behind every smile, there can be hidden struggles. That's why we've created a sanctuary where you can break free from the facade and express your innermost thoughts without fear of judgment. Here, you're not alone in your journey; you're part of a community that embraces vulnerability and supports one another through life's ups and downs.
+            <span style="line-height: 1.5rem; padding-right: 1rem;">At Void, we understand that behind every smile, there can be hidden struggles.</span><br><span style="line-height: 1.5rem; padding-right: 1rem;"> Here, you're not alone in your journey; you're part of a community that embraces vulnerability and supports one another through life's ups and downs.</span><br>
             
-            Join us as we navigate the depths of the human experience together. Let's fill the void with understanding, compassion, and connection.
+            <span style="line-height: 1.5rem; padding-right: 1rem;">Let's fill the void with understanding, compassion, and connection.</span>
         </p>
-        <div style="display: flex; justify-self: center; padding-left: 5%;">
+        <div style="display: flex; justify-self: center; padding-top: 2rem;">
             <button style="background-color: black; color: aliceblue; width: 5rem; padding: 1px; border: solid white;" class="buttona" onclick="proceed()">Proceed</button>
             <!-- <button style="background-color: black; color: aliceblue; width: 5rem; padding: 2px; border:solid white; margin-left: 1rem;">Skip</button> -->
         </div>
     </section>
-    <section style="height: 100vh;">
-        <canvas class="webgl1" style="z-index: -1;"></canvas>
+    <section>
+        <div class="nav" style="color: aliceblue; display: flex; justify-content:right; padding: 2rem; font-family: monospace; position: sticky;">
+            <ul>
+                <span style="padding-left: 0.5rem;">Support Groups</span>
+                <span style="padding-left: 0.5rem;" >Resources</span>
+                <span style="padding-left: 0.5rem;" >Music</span>
+                <span style="padding-left: 0.5rem;">Clinics</span>
+                <span style="padding-left: 0.5rem;">eliza</span>
+            </ul>
+        </div>
     </section>
     <!-- Include jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -40,7 +48,7 @@
             "To the infinitely large galaxies and stars, our anxieties, sorrows, joys and tensions are insignificant.",
             "Come, set free these thoughts overloading your brain. Let them float away in the sky of thoughts.",
             "A box will pop up now where you can put the heart aches, burdens and anxieties troubling you. Don't worry, nobody will be able to judge, comment or criticize it.",
-            "<span onclick='skip(false);' class='msgbtn'>Explore</span></span>"
+            "<a href='messages.html'><span onclick='skip(false);' class='msgbtn'>Explore</span></span><a>"
         ];
 
         // Function to proceed to the next message when spacebar is pressed

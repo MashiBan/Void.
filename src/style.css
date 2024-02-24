@@ -8,7 +8,7 @@ html,
 body
 {
     overflow: hidden;
-    height: fit-content;
+    /* height: 100vh; */
 }
 
 .webgl
@@ -20,7 +20,7 @@ body
 }
 
 section{
-    /* overflow: hidden; */
+    /* height: 30rem; */
 }
 #content {
     position: relative;

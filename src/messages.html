@@ -3,55 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <!-- Include jQuery library -->
-    <link rel="stylesheet" href="./style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title> messages</title>
+    <link rel="stylesheet" href="./messages.css">
 </head>
 <body>
-    <canvas class="webgl" style="z-index: -3;"></canvas>
-    <h1>Test</h1>
-    <!-- Button to trigger the proceeding -->
-    <button class="buttona" onclick="proceed()">Proceed</button>
-    <!-- Container for displaying messages -->
-    <div id="content" style="z-index: 2; color: aliceblue;"></div>
+    <canvas class="webgl" style="z-index: -1;"></canvas>
+    <section style="display: flex; flex-direction: column;z-index: 2; height: 8rem;padding-top: 9rem; padding-left: 3rem;width: 50vw;font-size: 1rem; color: aliceblue; font-family: monospace;">
+        <h1>You are not alone! The feeling you are having right now is absolutely fine..We are here to help you</h1>
+        <p style="padding: 1rem; padding-top: 13rem;">how are you feeling?</p>
+        <!-- <form>
+            <textarea id="mInput"></textarea>
+            <button onclick="storeMe()"> Submit</button>
+        </form> -->
+        <div style="padding-left: 1rem;">
+        <button style="padding: 0.11rem; width: max-content; background-color: black; border: solid white; color: aliceblue;" >Not good</button>
+        <button style="padding: 0.11rem;width: max-content; background-color: black; border: solid white; color: aliceblue;">Sad</button>
+        <button style="padding: 0.11rem;width: max-content; background-color: black; border: solid white; color: aliceblue;">Digust</button>
+    </div>
+    </section>
+    <section class="skills" id="skills">
+        <!-- <div class="title" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 500;padding-left: 2rem;" > >>Skills</div> -->
+
+        <div class="scroller" data-speed="slow">
+            
+            <ul class="tag-list scroll-inner" id="messages-list">
+                <!-- List items will be dynamically added here -->
+            </ul>
+        </div>
+        
+    </section>
+
+    <section class="skills" id="skills">
+        <!-- <div class="title" style="color: aliceblue; font-family: 'Poppins', sans-serif; font-weight: 500;padding-left: 2rem;" > >>Skills</div> -->
+
+        <div class="scroller" data-speed="slow">
+            
+            <ul class="tag-list scroll-inner" id="messages-list">
+                <!-- List items will be dynamically added here -->
+            </ul>
+        </div>
+        
+    </section>
+    <section>
+        <div class="nav" style="color: aliceblue; display: flex; justify-content:right; padding:-1rem; font-family: monospace; position: sticky;">
+            <ul>
+                <span style="padding-left: 0.5rem;">Support Groups</span>
+                <span style="padding-left: 0.5rem;" >Resources</span>
+                <span style="padding-left: 0.5rem;" >Music</span>
+                <span style="padding-left: 0.5rem;">Clinics</span>
+                <span style="padding-left: 0.5rem;">eliza</span>
+            </ul>
+        </div>
+    </section>
 
     <script>
-        // Initialize variables
-        var PRESSED = false;
-        var o = 0;
-        // Array of messages
-        var ttt = [
-            "We exist too much in the minds of others, worrying constantly about what others are thinking of us.",
-            "But the truth is that our needlessly tense and preciously brief lives have no meaning other than what we make of them.",
-            "To the infinitely large galaxies and stars, our anxieties, sorrows, joys and tensions are insignificant.",
-            "Come, set free these thoughts overloading your brain. Let them float away in the sky of thoughts.",
-            "A box will pop up now where you can put the heart aches, burdens and anxieties troubling you. Don't worry, nobody will be able to judge, comment or criticize it.",
-            "<textarea class='form-control' placeholder='How are you feeling?'></textarea><br><input type='checkbox' checked> Allow comments<span style='float:right'><span onclick='submit();' class='msgbtn'>Submit</span> | <span onclick='skip(false);' class='msgbtn'>Skip</span></span>"
-        ];
+        const messages = [
+    "I've been feeling overwhelmed lately, like there's so much to do and not enough time to do it all.",
+    "Sometimes I wonder if I'm on the right path, if all the effort I'm putting in will pay off in the end.",
+    "It's hard to stay motivated when everything feels so uncertain.",
+    "I miss the days when life was simpler, when I didn't have to worry about the future all the time.",
+    "No matter how hard I try, I always feel like I'm falling short.",
+    "I wish I could just pause life for a moment and catch my breath.",
+    "I'm tired of pretending like everything's okay when it's really not.",
+    "I feel like I'm constantly comparing myself to others and coming up short.",
+    "Some days it feels like the weight of the world is on my shoulders.",
+    "I just want to feel like I'm making progress, like I'm moving forward instead of standing still.",
+    "It's hard to stay positive when everything around me seems to be falling apart.",
+    "I wish I could turn off my brain sometimes and just enjoy the moment.",
+    "I'm tired of feeling like I'm always one step behind, like I'll never catch up.",
+    "I just want to feel like I'm enough, like I'm worthy of love and acceptance.",
+    "It's exhausting trying to keep up with everyone else's expectations.",
+    "I feel like I'm drowning in a sea of responsibilities, like there's no way out.",
+    "I'm scared that I'll never find my place in the world, that I'll always be searching for something more.",
+    "I wish I could see myself the way others see me, with kindness and compassion.",
+    "Sometimes it feels like I'm carrying the weight of the world on my shoulders, like there's no end in sight.",
+    "I'm tired of feeling like I'm always running on empty, like there's never enough time or energy to do everything I want to do.",
+    "I just want to feel happy again, to feel like myself instead of this constant sense of emptiness.",
+    "It's hard to stay positive when everything around me feels so overwhelming.",
+    "I wish I could just escape from it all, to leave everything behind and start fresh.",
+    "I'm tired of feeling like I'm constantly fighting against the tide, like no matter how hard I try, I never make any progress.",
+    "I just want to feel like I'm enough, like I'm worthy of love and acceptance.",
+    "It's exhausting trying to keep up with everyone else's expectations.",
+    "I feel like I'm drowning in a sea of responsibilities, like there's no way out.",
+    "I'm scared that I'll never find my place in the world, that I'll always be searching for something more.",
+    "I wish I could see myself the way others see me, with kindness and compassion.",
+    "Sometimes it feels like I'm carrying the weight of the world on my shoulders, like there's no end in sight.",
+    "I'm tired of feeling like I'm always running on empty, like there's never enough time or energy to do everything I want to do.",
+    "I just want to feel happy again, to feel like myself instead of this constant sense of emptiness.",
+    "It's hard to stay positive when everything around me feels so overwhelming.",
+    "I wish I could just escape from it all, to leave everything behind and start fresh.",
+    "Sometimes it feels like I'm carrying the weight of the world on my shoulders, like there's no end in sight.",
+    "I'm tired of feeling like I'm always running on empty, like there's never enough time or energy to do everything I want to do.",
+    "I just want to feel happy again, to feel like myself instead of this constant sense of emptiness.",
+    "It's hard to stay positive when everything around me feels so overwhelming.",
+    "I wish I could just escape from it all, to leave everything behind and start fresh.",
+    "I'm tired of feeling like I'm constantly fighting against the tide, like no matter how hard I try, I never make any progress.",
+    "I just want to feel like I'm enough, like I'm worthy of love and acceptance.",
+    "It's exhausting trying to keep up with everyone else's expectations.",
+    "I feel like I'm drowning in a sea of responsibilities, like there's no way out.",
+    "I'm tired of feeling like I'm constantly fighting against the tide, like no matter how hard I try, I never make any progress."
+];
 
-        // Function to proceed to the next message when spacebar is pressed
-        $('body').keyup(function(e) {
-            if (e.keyCode == 32 && PRESSED && o < ttt.length) {
-                // User has pressed space
-                $('#content').fadeOut('slow', function() {
-                    $('#content').html("<div class='messages col-md-6 col-sm-12 col-xs-12' style='color: white; z-index: 2'>" + ttt[o] + "</div>");
-                    $('#content').fadeIn('slow');
-                    o++;
-                });
-            }
-        });
 
-        // Function to handle proceeding
-        function proceed() {
-            PRESSED = true;
-            $(".buttona").fadeOut("slow"); // Hide the button
-            $("#content").fadeOut("slow", function() {
-                $("#content").html("<div class='messages'>Press spacebar or tap to proceed.</div>");
-                $("#content").fadeIn("slow");
+        // function storeMe(){
+        //     const newMe = document.getElementById('mInput').value;
+        //     messages.push(newMe);
+        //     console.log(newMe);
+        // }
+        const scrollers = document.querySelectorAll(".scroller");
+
+        // If a user hasn't opted in for reduced motion, then we add the animation
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          addAnimation();
+        }
+
+        function addAnimation() {
+          scrollers.forEach((scroller) => {
+            // add data-animated="true" to every `.scroller` on the page
+            scroller.setAttribute("data-animated", true);
+
+            // Make an array from the elements within `.scroller-inner`
+            const scrollerInner = scroller.querySelector(".scroll-inner");
+            const messagesList = document.getElementById("messages-list");
+
+            // Populate the messages list dynamically
+            messages.forEach((message) => {
+              const listItem = document.createElement("li");
+              listItem.textContent = message;
+              messagesList.appendChild(listItem);
             });
+
+            // Randomly select an item from the list and display it
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            const randomMessage = messages[randomIndex];
+            document.getElementById("random-message").innerText = randomMessage;
+          });
         }
     </script>
     <script type="module" src="./messages.js"></script>
+
 </body>
 </html>
