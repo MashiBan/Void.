@@ -4,7 +4,7 @@
 ![Image Alt Text](https://drive.google.com/file/d/1IsKsgqyDqtwJTkLg_pHXBtrnQNbJ420R/view?usp=drive_link)
 ![Image Alt Text](https://drive.google.com/file/d/10jfh7pNyvZ-tYZKj6n6SVuzUcinLfqN3/view?usp=drive_link)
 ![Image Alt Text](https://drive.google.com/file/d/1vN0sqR4YsR5hG0d8yi0j8yyx4KHjML1J/view?usp=drive_link)
-src/Screenshot 2024-02-25 at 6.45.38 PM.png
+
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
 Run this followed commands:
